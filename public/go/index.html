@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>案件充足管理AIエージェント デモ - AICE株式会社</title>
+  <script>
+    // QR code landing — store tracking params and redirect to demo
+    var params = new URLSearchParams(location.search);
+    var companyId = params.get('c') || '';
+    var userId = params.get('u') || '';
+
+    // Store in localStorage for ContactModal
+    if (companyId) localStorage.setItem('qr_company_id', companyId);
+    if (userId) localStorage.setItem('qr_user_id', userId);
+    localStorage.setItem('qr_scanned_at', new Date().toISOString());
+
+    // GASにQRスキャンを記録してからリダイレクト
+    var gasUrl = 'https://script.google.com/macros/s/AKfycbzww4wotfGYORv7R7DHioAEzuNSKXLzQlL-htDL-Pxgdk2R0zi-eV5af0h8AM_BbtU8Qg/exec';
+
+    function sendAndRedirect(companyName) {
+      if (companyId) {
+        try {
+          navigator.sendBeacon(gasUrl, new Blob([JSON.stringify({
+            event: 'qr_scan',
+            companyId: companyId,
+            userId: userId,
+            companyName: companyName || '',
+            userAgent: navigator.userAgent,
+            timestamp: new Date().toISOString()
+          })], { type: 'text/plain' }));
+        } catch (e) {}
+      }
+      location.replace(location.origin + '/');
+    }
+
+    if (companyId) {
+      fetch('/data/companies.json')
+        .then(function(r) { return r.json(); })
+        .then(function(map) { sendAndRedirect(map[companyId] || ''); })
+        .catch(function() { sendAndRedirect(''); });
+    } else {
+      sendAndRedirect('');
+    }
+  </script>
+</head>
+<body></body>
+</html>

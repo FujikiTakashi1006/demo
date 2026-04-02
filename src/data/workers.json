@@ -1,0 +1,14 @@
+[
+  {"id":"w-001","name":"田中 一郎","trade":"型枠","qualification":"1級技能士","status":"active","currentSite":"渋谷A","availableDate":null},
+  {"id":"w-002","name":"佐藤 健二","trade":"鳶・足場","qualification":"足場組立作業主任者","status":"available_from","currentSite":null,"availableDate":"4/5"},
+  {"id":"w-003","name":"鈴木 大輔","trade":"電気工事","qualification":"第一種電気工事士","status":"active","currentSite":"千葉","availableDate":null},
+  {"id":"w-004","name":"高橋 正","trade":"鉄筋","qualification":"1級技能士","status":"active","currentSite":"渋谷A","availableDate":null},
+  {"id":"w-005","name":"渡辺 修一","trade":"左官","qualification":"1級技能士","status":"active","currentSite":"横浜","availableDate":null},
+  {"id":"w-006","name":"伊藤 誠","trade":"配管","qualification":"管工事施工管理技士","status":"available_from","currentSite":null,"availableDate":"4/8"},
+  {"id":"w-007","name":"山本 浩","trade":"塗装","qualification":"1級技能士","status":"active","currentSite":"品川","availableDate":null},
+  {"id":"w-008","name":"中村 太一","trade":"クレーン","qualification":"移動式クレーン運転士","status":"active","currentSite":"川崎","availableDate":null},
+  {"id":"w-009","name":"小林 裕太","trade":"土工","qualification":"車両系建設機械運転者","status":"active","currentSite":"川崎","availableDate":null},
+  {"id":"w-010","name":"加藤 健","trade":"防水","qualification":"防水施工技能士","status":"active","currentSite":"品川","availableDate":null},
+  {"id":"w-011","name":"吉田 勇気","trade":"鉄骨","qualification":"溶接技能者","status":"available_from","currentSite":null,"availableDate":"4/3"},
+  {"id":"w-012","name":"松本 翔太","trade":"内装","qualification":"内装仕上施工技能士","status":"active","currentSite":"横浜","availableDate":null}
+]

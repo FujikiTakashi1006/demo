@@ -1,0 +1,12 @@
+[
+  {"id":"sch-001","date":"2026-04-01","dayOfWeek":"火","task":"コンクリ打設 3F","site":"渋谷A","siteId":"site-001","workers":12},
+  {"id":"sch-002","date":"2026-04-02","dayOfWeek":"水","task":"鉄筋組立 4F","site":"渋谷A","siteId":"site-001","workers":8},
+  {"id":"sch-003","date":"2026-04-02","dayOfWeek":"水","task":"外壁塗装 2F","site":"品川","siteId":"site-002","workers":6},
+  {"id":"sch-004","date":"2026-04-03","dayOfWeek":"木","task":"設備配管検査","site":"品川","siteId":"site-002","workers":4},
+  {"id":"sch-005","date":"2026-04-03","dayOfWeek":"木","task":"内装仕上げ","site":"横浜","siteId":"site-003","workers":10},
+  {"id":"sch-006","date":"2026-04-04","dayOfWeek":"金","task":"基礎配筋 1F","site":"川崎","siteId":"site-004","workers":15},
+  {"id":"sch-007","date":"2026-04-04","dayOfWeek":"金","task":"屋上防水工事","site":"品川","siteId":"site-002","workers":5},
+  {"id":"sch-008","date":"2026-04-07","dayOfWeek":"月","task":"型枠組立 4F","site":"渋谷A","siteId":"site-001","workers":10},
+  {"id":"sch-009","date":"2026-04-07","dayOfWeek":"月","task":"電気配線 2F","site":"千葉","siteId":"site-005","workers":6},
+  {"id":"sch-010","date":"2026-04-08","dayOfWeek":"火","task":"鉄骨建方","site":"千葉","siteId":"site-005","workers":14}
+]

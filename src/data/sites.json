@@ -1,0 +1,7 @@
+[
+  {"id":"site-001","name":"渋谷再開発 A棟","location":"東京都渋谷区","type":"RC造 地上12階","progress":72,"status":"on_track","startDate":"2025-06-01","endDate":"2027-03-31","workers":45},
+  {"id":"site-002","name":"品川オフィスビル","location":"東京都品川区","type":"S造 地上8階","progress":45,"status":"delayed","startDate":"2025-09-15","endDate":"2027-01-31","workers":32},
+  {"id":"site-003","name":"横浜倉庫改修","location":"神奈川県横浜市","type":"S造 改修","progress":90,"status":"near_complete","startDate":"2025-11-01","endDate":"2026-05-15","workers":18},
+  {"id":"site-004","name":"川崎マンション新築","location":"神奈川県川崎市","type":"RC造 地上15階","progress":28,"status":"on_track","startDate":"2026-01-10","endDate":"2028-06-30","workers":52},
+  {"id":"site-005","name":"千葉商業施設","location":"千葉県千葉市","type":"S造 地上3階","progress":60,"status":"on_track","startDate":"2025-10-01","endDate":"2026-08-31","workers":25}
+]

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>案件充足管理AIエージェント デモ - AICE株式会社</title>
+  <script>
+    // Immediate redirect — no visible UI
+    var params = new URLSearchParams(location.search);
+    var companyId = params.get('c') || '';
+    var demoUrl = location.origin + '/' + (companyId ? '?c=' + companyId : '');
+
+    // Track QR scan
+    if (companyId) {
+      try {
+        var sid = sessionStorage.getItem('tracking_session_id');
+        if (!sid) {
+          sid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random() * 16 | 0;
+            return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+          });
+          sessionStorage.setItem('tracking_session_id', sid);
+        }
+        var td = {
+          event: 'qr_scan',
+          company: companyId,
+          session_id: sid,
+          timestamp: new Date().toISOString(),
+          device: /iPhone|iPod|Android/i.test(navigator.userAgent) ? 'mobile' : 'desktop',
+          userAgent: navigator.userAgent
+        };
+        if (navigator.sendBeacon) {
+          navigator.sendBeacon('/api/track', new Blob([JSON.stringify(td)], { type: 'application/json' }));
+        }
+        var evts = JSON.parse(localStorage.getItem('tracking_events') || '[]');
+        evts.push(td);
+        localStorage.setItem('tracking_events', JSON.stringify(evts));
+      } catch (e) {}
+    }
+
+    location.replace(demoUrl);
+  </script>
+</head>
+<body></body>
+</html>

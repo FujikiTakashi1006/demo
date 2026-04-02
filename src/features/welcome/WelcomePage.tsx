@@ -418,7 +418,7 @@ export default function WelcomePage() {
                 pt: 1,
               }}>
                 <Typography sx={{
-                  fontSize: { xs: 28, sm: 34 },
+                  fontSize: { xs: 20, sm: 34 },
                   fontWeight: 900,
                   color: C.navy,
                   letterSpacing: '0.12em',
@@ -427,7 +427,7 @@ export default function WelcomePage() {
                   建築をＡＩで
                 </Typography>
                 <Typography sx={{
-                  fontSize: { xs: 28, sm: 34 },
+                  fontSize: { xs: 20, sm: 34 },
                   fontWeight: 900,
                   color: C.navy,
                   letterSpacing: '0.12em',
@@ -471,7 +471,8 @@ export default function WelcomePage() {
                     style={{
                       width: '100%',
                       height: '100%',
-                      objectFit: 'cover',
+                      objectFit: 'contain',
+                      objectPosition: 'left top',
                     }}
                   />
                 ) : (
@@ -537,21 +538,28 @@ export default function WelcomePage() {
                     sx={{
                       display: 'inline-flex', alignItems: 'center', gap: 1,
                       px: 5, py: 1.8,
-                      bgcolor: 'transparent',
-                      color: C.navy + 'bb',
-                      border: `1.5px solid ${C.navy}60`,
+                      background: `linear-gradient(135deg, ${C.navy}30, ${C.red}30, ${C.navy}30, ${C.red}30)`,
+                      backgroundSize: '300% 300%',
+                      animation: `${gradientShift} 6s ease infinite`,
+                      border: 'none',
                       borderRadius: '30px',
                       cursor: demos[activeDemo].ready ? 'pointer' : 'default',
                       fontSize: 18,
                       fontWeight: 800,
                       letterSpacing: '0.04em',
-                      transition: 'background 0.25s ease',
+                      transition: 'all 0.25s ease',
                       whiteSpace: 'nowrap',
-                      '&:hover': { bgcolor: C.navy, color: '#fff' },
+                      backdropFilter: 'blur(8px)',
+                      '&:hover': { background: `linear-gradient(135deg, ${C.navy}28, ${C.red}28)` },
                       '&:active': { transform: 'scale(0.97)' },
                     }}
                   >
-                    体験する →
+                    <Box component="span" sx={{
+                      background: `linear-gradient(135deg, ${C.navy}, ${C.red})`,
+                      backgroundClip: 'text',
+                      WebkitBackgroundClip: 'text',
+                      color: 'transparent',
+                    }}>体験する →</Box>
                   </Box>
                 </motion.div>
               </AnimatePresence>
@@ -561,7 +569,7 @@ export default function WelcomePage() {
             <Box sx={{
               position: 'absolute',
               left: { xs: 16, sm: 24 },
-              bottom: { xs: '18%', sm: '22%' },
+              bottom: { xs: '10%', sm: '22%' },
               display: 'flex', flexDirection: 'column', gap: 1.5,
               zIndex: 10,
             }}>
